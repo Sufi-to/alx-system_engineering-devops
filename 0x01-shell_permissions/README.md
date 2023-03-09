@@ -3,3 +3,4 @@ ex-1 shell permissions to change user
 2- prints all the groups the user belongs to
 3- change file owner
 4- create an empty file
+5- Making files executable
