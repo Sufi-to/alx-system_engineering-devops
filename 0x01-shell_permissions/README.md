@@ -1,6 +1,6 @@
-** ex-1 shell permissions to change user **
-** 1-who_am_i prints the name of effective user **
-** 2- prints all the groups the user belongs to **
+**ex-1 shell permissions to change user**
+**1-who_am_i prints the name of effective user**
+**2- prints all the groups the user belongs to**
 ** 3- change file owner **
 ** 4- create an empty file **
 ** 5- Making files executable **
@@ -14,3 +14,4 @@
 ** 13- change the group owner of a file **
 ** 100- chage the owner and group of directory **
 ** 101- Symbolic link permissions **
+**102- change user if it is user**
