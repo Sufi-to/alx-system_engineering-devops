@@ -10,3 +10,4 @@ ex-1 shell permissions to change user
 9- change mode of hello
 10- make the files mode mirror another file
 11- change directory permissions
+12- create a directory and add permissions
