@@ -8,3 +8,4 @@ ex-1 shell permissions to change user
 7- everyone has execute permission
 8- only user has all the permissions
 9- change mode of hello
+10- make the files mode mirror another file
