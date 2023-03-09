@@ -5,3 +5,4 @@ ex-1 shell permissions to change user
 4- create an empty file
 5- Making files executable
 6- changing multiple permissions
+7- everyone has execute permission
