@@ -7,3 +7,4 @@ ex-1 shell permissions to change user
 6- changing multiple permissions
 7- everyone has execute permission
 8- only user has all the permissions
+9- change mode of hello
