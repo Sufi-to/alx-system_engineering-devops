@@ -3,6 +3,7 @@
 # from Japan" after 9 and "bad luck from Italy" after 19
 # and "Best School" in others
 i=1
+
 while [ $i -le 20 ];
 do
     echo "$i"
