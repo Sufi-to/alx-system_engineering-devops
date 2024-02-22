@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script the contents of the currnent directory using 4
+x="$(ls)"
+for i in $x; do
+    echo "${i//*-/""}"
+done
