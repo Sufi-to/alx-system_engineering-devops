@@ -1,4 +1,5 @@
 # kills a process using puppet
-exec {'killmenow':
-  command => 'pkill'
+exec {'pkill':
+  command  => 'pkill killmenow',
+  provider => 'shell'
 }
