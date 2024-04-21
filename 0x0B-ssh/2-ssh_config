@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script that configures the ssh client so that it connects without
+# typing password
+Host *
+  PasswordAuthentication No
+  IdentityFile ~/.ssh/school
