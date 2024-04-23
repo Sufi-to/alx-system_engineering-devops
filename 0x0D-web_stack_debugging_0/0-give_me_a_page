@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# fixing pu whatever needed to be fixed
+service apache2 start
