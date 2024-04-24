@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
-
 # Script that transfers file from our client to server, it takes 4 parameters
-
-# number of parameters
 number_of_para=$#
-
-# If the number of parameters is not equal to 4, display usage message
 if [ $number_of_para -lt 4 ]
 then
     echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
