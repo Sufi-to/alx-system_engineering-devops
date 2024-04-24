@@ -4,10 +4,11 @@ package { 'nginx':
 }
 
 file { 'var/www/html/index.html':
+  ensure  => 'present',
   content => 'Hello World!',
 }
 
-file_line { 'aaaa':
+file_line { 'aaaaa':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 default_server;',
