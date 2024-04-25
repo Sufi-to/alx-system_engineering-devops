@@ -1,4 +1,5 @@
 # install and configure an Nginx server using puppet
+
 package { 'nginx':
   ensure => 'installed',
 }
