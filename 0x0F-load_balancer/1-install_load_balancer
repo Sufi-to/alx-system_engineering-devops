@@ -1,1 +1,16 @@
 #!/usr/bin/env bash
+# script that installs an haproxy loadbalancer and directs traffic to my servers
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy-2.0
+apt-get install haproxy=2.0.\*
+echo "
+frontend http-in
+    bind *:80
+    default_backend servers
+
+backend servers
+    balance roundrobin
+    server 323922-web-01 54.175.253.42 check
+    server 323922-web-02 54.237.103.128 check
+" >> /etc/haproxy/haproxy.cfg
+service haproxy start
