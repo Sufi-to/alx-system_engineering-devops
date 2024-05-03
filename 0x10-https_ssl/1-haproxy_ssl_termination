@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+# Scripts that configures ssl to be terminated at the load balancer
