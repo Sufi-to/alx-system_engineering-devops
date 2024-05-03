@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
 # Script that diplays about domain and subdomain details
+# shellcheck disable=SC2086
