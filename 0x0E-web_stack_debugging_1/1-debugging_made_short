@@ -2,5 +2,5 @@
 # script the ensure nginx running on listening on port 80
 # but a sweet one
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-sudo service nginx restart
-kill -9 "$(cat /var/run/nginx.pid)"
+service nginx restart
+pkill -o nginx
