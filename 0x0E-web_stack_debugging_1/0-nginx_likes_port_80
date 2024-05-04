@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # script that ensures nginx is running and listening on port 80
-sudo rm /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service start nginx
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx start

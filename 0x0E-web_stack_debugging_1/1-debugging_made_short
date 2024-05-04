@@ -2,5 +2,5 @@
 # script the ensure nginx running on listening on port 80
 # but a sweet one
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx start
+service nginx restart
 kill "$(pgrep 'nginx' | head -1)"
