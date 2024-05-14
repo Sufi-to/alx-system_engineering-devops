@@ -2,4 +2,5 @@
 # script that makes nginx run using nginx user privilleges for security
 sudo chown nginx:nginx /etc/nginx/nginx.conf
 sudo chmod u+rw /etc/nginx/nginx.conf
+pkill apache2
 sudo -u nginx service nginx start
