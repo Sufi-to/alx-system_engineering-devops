@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script that generates a MYSQL dump and creates a tar.gz archive
+
