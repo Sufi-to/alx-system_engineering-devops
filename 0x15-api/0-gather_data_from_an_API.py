@@ -24,7 +24,7 @@ if __name__ == "__main__":
     res = req.get(url).text
     obj = json.loads(res)
 
-    num_task, comp_tasks = tasks_done(obj['id'])
+    num_task, comp_tasks = tasks_done(obj.get('id'))
     print(f"Employee {obj.get('name')} is done with tasks({num_task}/20):")
     for i in comp_tasks:
         print("/t{}".format(i))
