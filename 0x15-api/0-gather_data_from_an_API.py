@@ -13,9 +13,9 @@ def tasks_done(id):
     tasks_done = []
     count = 0
     for i in obj:
-        if i['userId'] == id and i['completed']:
+        if i.get('userId') == id and i.get('completed'):
             count += 1
-            tasks_done.append(i['title'])
+            tasks_done.append(i.get('title'))
     return count, tasks_done
 
 
@@ -25,6 +25,6 @@ if __name__ == "__main__":
     obj = json.loads(res)
 
     num_task, comp_tasks = tasks_done(obj['id'])
-    print(f"Employee {obj['name']} is done with tasks({num_task}/20):")
+    print(f"Employee {obj.get('name')} is done with tasks({num_task}/20):")
     for i in comp_tasks:
-        print("/t {}".format(i))
+        print("/t{}".format(i))
