@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Script using a given REST API to get data back."""
-from sys import argv
 import json
 import requests as req
+from sys import argv
 
 
 def tasks_done(id):
