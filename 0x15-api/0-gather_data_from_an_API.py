@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Script using a given REST API to get data back."""
-import requests as req
 from sys import argv
 import json
+import requests as req
 
 
 def tasks_done(id):
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     url = f"https://jsonplaceholder.typicode.com/users/{argv[1]}"
     res = req.get(url).text
     obj = json.loads(res)
-    print(obj)
+
     num_task, comp_tasks = tasks_done(obj['id'])
     print(f"Employee {obj['name']} is done with tasks({num_task}/20):")
     for i in comp_tasks:
