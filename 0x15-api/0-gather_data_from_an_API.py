@@ -27,4 +27,4 @@ if __name__ == "__main__":
     num_task, comp_tasks = tasks_done(obj.get('id'))
     print(f"Employee {obj.get('name')} is done with tasks({num_task}/20):")
     for i in comp_tasks:
-        print("/t{}".format(i))
+        print("/t {}".format(i))
