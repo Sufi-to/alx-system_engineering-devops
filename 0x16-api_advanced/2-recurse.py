@@ -18,8 +18,6 @@ def recurse(subreddit, after=None, hot_list=None):
         posts = x.get("data", {}).get("children", [])
         hot_list.extend([post["data"]["title"] for post in posts])
         after = x.get("data", {}).get("after")
-        print(after)
-        print(hot_list)
         if after:
             return recurse(subreddit, after, hot_list)
         else:
