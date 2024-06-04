@@ -6,8 +6,14 @@ the first 10 hot posts listed for a given subreddit
 import requests
 
 
-# def top_ten(subreddit):
-payload = {"where": "popular"}
-yo = requests.get("https://www.reddit.com/r/programming.json", params=payload, allow_redirects=False)
-x = yo.json()
-print(x)
+def top_ten(subreddit):
+    payload = {"where": "popular", "limit": 9}
+    yo = requests.get("https://www.reddit.com/r/programming/hot.json", params=payload, allow_redirects=False)
+    if yo.status_code == 200:
+        x = yo.json()
+        posts = x.get("data", {}).get("children", [])
+        hel = [post["data"]["title"] for post in posts]
+        for i in hel:
+            print(i)
+    else:
+        print("None")
