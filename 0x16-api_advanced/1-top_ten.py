@@ -7,9 +7,9 @@ import requests
 
 
 def top_ten(subreddit):
-    payload = {"where": "popular", "limit": 9}
-    yo = requests.get(f"https://www.reddit.com/r/{subreddit}/hot.json",
-                      params=payload, allow_redirects=False)
+    payload = {"limit": 9}
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    yo = requests.get(url, params=payload, allow_redirects=False)
     if yo.status_code == 200:
         x = yo.json()
         posts = x.get("data", {}).get("children", [])
