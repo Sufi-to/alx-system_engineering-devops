@@ -8,6 +8,6 @@ import requests
 
 # def top_ten(subreddit):
 payload = {"where": "popular"}
-yo = requests.get("https://www.reddit.com/r/programming.json", params=payload)
+yo = requests.get("https://www.reddit.com/r/programming.json", params=payload, allow_redirects=False)
 x = yo.json()
 print(x)
