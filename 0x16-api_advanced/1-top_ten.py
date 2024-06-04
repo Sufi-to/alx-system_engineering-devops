@@ -13,7 +13,7 @@ def top_ten(subreddit):
     if yo.status_code == 200:
         x = yo.json()
         posts = x.get("data", {}).get("children", [])
-        hel = [post["data"]["title"] for post in posts]
+        hel = [post.get("data", {}).get("title", []) for post in posts]
         for i in hel:
             print(i)
     else:
