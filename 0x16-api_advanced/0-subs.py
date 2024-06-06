@@ -7,19 +7,12 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """Get the number of subscribers."""
-    if subreddit is None or not isinstance(subreddit, str):
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0"
+    }
+    res = requests.get(url, headers=headers, allow_redirects=False)
+    if res.status_code == 404:
         return 0
-    user_agent = {"User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    try:
-        reddit = requests.get(url, headers=user_agent, allow_redirects=False)
-        if reddit.status_code == 200:
-            x = reddit.json()
-            return (x.get("data", {}).get("subscribers", 0))
-        else:
-            return (0)
-    except requests.RequestException as e:
-        return (0)
-    except ValueError:
-        return (0)
+    results = res.json().get("data")
+    return results.get("subscribers")
