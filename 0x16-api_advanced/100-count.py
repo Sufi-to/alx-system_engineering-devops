@@ -29,19 +29,15 @@ def count_words(subreddit, word_list, after="", w_dic={}):
     except ValueError as e:
         return None
     try:
-
         data = js.get("data")
         after = data.get("after")
         children = data.get("children")
         for child in children:
             post = child.get("data")
             title = post.get("title")
-            lower = [s.lower() for s in title.split(' ')]
-
+            low = [s.lower() for s in title.split(' ')]
             for w in word_list:
-                w_dic[w] += lower.count(w.lower())
-
+                w_dic[w] += low.count(w.lower())
     except requests.RequestException as er:
         return None
-
     count_words(subreddit, word_list, after, w_dic)
