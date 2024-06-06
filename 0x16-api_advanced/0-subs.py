@@ -10,11 +10,9 @@ def number_of_subscribers(subreddit):
     """Get the number of subscribers."""
     if subreddit is None or type(subreddit) is not str:
         return 0
-    headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
-    }
+    user_agent = {"User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    reddit = requests.get(url, headers=headers, allow_redirects=False)
+    reddit = requests.get(url, headers=user_agent, allow_redirects=False)
     if reddit.status_code == 200:
         x = reddit.json()
         return (x.get("data", {}).get("subsribers"))
