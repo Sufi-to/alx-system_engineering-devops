@@ -20,13 +20,13 @@ def count_words(subreddit, word_list, after="", w_dic={}):
                 print("{}: {}".format(w[0].lower(), w[1]))
         return None
     url = red + "{}/hot/.json".format(subreddit)
-    params = {'limit': 100, 'after': after}
-    fr = get(url, headers=headers, params=params, allow_redirects=False)
+    p = {'limit': 100, 'after': after}
+    fr = get(url, headers=headers, params=p, allow_redirects=False)
     if fr.status_code != 200:
         return None
     try:
         js = fr.json()
-    except ValueError:
+    except ValueError as e:
         return None
     try:
 
@@ -41,7 +41,7 @@ def count_words(subreddit, word_list, after="", w_dic={}):
             for w in word_list:
                 w_dic[w] += lower.count(w.lower())
 
-    except requests.RequestException as e:
+    except requests.RequestException as er:
         return None
 
     count_words(subreddit, word_list, after, w_dic)
