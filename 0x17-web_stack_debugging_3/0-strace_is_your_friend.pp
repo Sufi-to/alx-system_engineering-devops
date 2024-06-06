@@ -1,6 +1,6 @@
 # script that ensures the web server functions properly
 
-exec { 'fix-wp':
-  command => 'sed -i s/phpp/php/g /var/www/html/wp-includes/class-wp-locale.php',
-  path    => '/usr/local/bin/:/bin/'
+exec { 'Fix_wp':
+  command  => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
+  provider => shell,
 }
