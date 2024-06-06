@@ -14,7 +14,10 @@ def number_of_subscribers(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     reddit = requests.get(url, headers=user_agent, allow_redirects=False)
     if reddit.status_code == 200:
-        x = reddit.json()
-        return (x.get("data", {}).get("subsribers"))
+        try:
+            x = reddit.json()
+            return (x.get("data", {}).get("subscribers"))
+        except ValueError:
+            return (0)
     else:
         return (0)
